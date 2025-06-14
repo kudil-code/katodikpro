@@ -1,0 +1,478 @@
+/* Reset and Base Styles */
+* {
+    margin: 0; /* Menghilangkan margin default */
+    padding: 0; /* Menghilangkan padding default */
+    box-sizing: border-box; /* Membuat ukuran box include border dan padding */
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; /* Font modern */
+    line-height: 1.6; /* Tinggi baris untuk readability */
+    color: #000; /* Warna text hitam */
+    background-color: #fff; /* Background putih */
+}
+
+.container {
+    max-width: 1200px; /* Lebar maksimal container */
+    margin: 0 auto; /* Center container */
+    padding: 0 20px; /* Padding horizontal */
+}
+
+/* Navigation Bar */
+.navbar {
+    background-color: #000; /* Background hitam untuk navbar */
+    color: #fff; /* Text putih */
+    padding: 1rem 0; /* Padding vertical */
+    position: fixed; /* Navbar tetap di atas saat scroll */
+    width: 100%; /* Lebar penuh */
+    top: 0; /* Posisi di atas */
+    z-index: 1000; /* Di atas element lain */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Shadow subtle */
+}
+
+.navbar .container {
+    display: flex; /* Flexbox untuk layout */
+    justify-content: space-between; /* Logo kiri, menu kanan */
+    align-items: center; /* Vertical center */
+}
+
+.logo h1 {
+    font-size: 1.8rem; /* Ukuran logo */
+    font-weight: 700; /* Bold */
+    letter-spacing: -1px; /* Spacing huruf rapat */
+}
+
+.nav-menu {
+    display: flex; /* Menu horizontal */
+    list-style: none; /* Hilangkan bullet */
+    gap: 2rem; /* Jarak antar menu */
+}
+
+.nav-menu a {
+    color: #fff; /* Text putih */
+    text-decoration: none; /* Hilangkan underline */
+    font-weight: 500; /* Medium weight */
+    transition: opacity 0.3s ease; /* Animasi hover */
+}
+
+.nav-menu a:hover {
+    opacity: 0.7; /* Transparansi saat hover */
+}
+
+.hamburger {
+    display: none; /* Hidden di desktop */
+    flex-direction: column; /* Vertical lines */
+    cursor: pointer; /* Pointer cursor */
+}
+
+.hamburger span {
+    width: 25px; /* Lebar garis */
+    height: 3px; /* Tinggi garis */
+    background-color: #fff; /* Warna putih */
+    margin: 3px 0; /* Jarak antar garis */
+    transition: 0.3s; /* Animasi */
+}
+
+/* Hero Section */
+.hero {
+    background-color: #f5f5f5; /* Light gray background */
+    padding: 120px 0 80px; /* Padding dengan ruang untuk navbar */
+    text-align: center; /* Center text */
+}
+
+.hero-title {
+    font-size: 3rem; /* Ukuran judul besar */
+    font-weight: 800; /* Extra bold */
+    margin-bottom: 1rem; /* Margin bawah */
+    line-height: 1.2; /* Line height tight */
+}
+
+.hero-subtitle {
+    font-size: 1.25rem; /* Subtitle lebih besar */
+    color: #333; /* Dark gray */
+    margin-bottom: 2rem; /* Margin bawah */
+    max-width: 600px; /* Lebar maksimal */
+    margin-left: auto; /* Center horizontal */
+    margin-right: auto; /* Center horizontal */
+}
+
+.cta-button {
+    display: inline-block; /* Inline block untuk padding */
+    background-color: #000; /* Background hitam */
+    color: #fff; /* Text putih */
+    padding: 15px 30px; /* Padding button */
+    text-decoration: none; /* Hilangkan underline */
+    font-weight: 600; /* Semi bold */
+    border-radius: 5px; /* Rounded corners */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animasi */
+}
+
+.cta-button:hover {
+    transform: translateY(-2px); /* Naik sedikit */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2); /* Shadow */
+}
+
+/* Section Styles */
+section {
+    padding: 80px 0; /* Padding vertical sections */
+}
+
+.section-title {
+    font-size: 2.5rem; /* Ukuran judul section */
+    text-align: center; /* Center */
+    margin-bottom: 3rem; /* Margin bawah */
+    font-weight: 700; /* Bold */
+}
+
+.section-text {
+    text-align: center; /* Center text */
+    max-width: 800px; /* Lebar maksimal */
+    margin: 0 auto 3rem; /* Center dengan margin bawah */
+    font-size: 1.1rem; /* Sedikit lebih besar */
+    color: #333; /* Dark gray */
+}
+
+/* Features Grid */
+.features {
+    display: grid; /* Grid layout */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive columns */
+    gap: 2rem; /* Gap antar items */
+    margin-top: 3rem; /* Margin atas */
+}
+
+.feature {
+    text-align: center; /* Center text */
+    padding: 2rem; /* Padding internal */
+    background-color: #f8f8f8; /* Light background */
+    border-radius: 10px; /* Rounded corners */
+    transition: transform 0.3s ease; /* Animasi hover */
+}
+
+.feature:hover {
+    transform: translateY(-5px); /* Naik saat hover */
+}
+
+.feature h3 {
+    font-size: 1.5rem; /* Ukuran heading */
+    margin-bottom: 1rem; /* Margin bawah */
+}
+
+.feature p {
+    color: #666; /* Medium gray */
+    line-height: 1.8; /* Line height longgar */
+}
+
+/* Why Us Section */
+.why-us {
+    background-color: #f5f5f5; /* Light gray background */
+}
+
+.benefits {
+    display: grid; /* Grid layout */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive columns */
+    gap: 2rem; /* Gap antar items */
+}
+
+.benefit {
+    background-color: #fff; /* White background */
+    padding: 2rem; /* Padding internal */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05); /* Subtle shadow */
+    transition: box-shadow 0.3s ease; /* Animasi hover */
+}
+
+.benefit:hover {
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1); /* Shadow lebih dalam */
+}
+
+.benefit h3 {
+    font-size: 1.3rem; /* Ukuran heading */
+    margin-bottom: 1rem; /* Margin bawah */
+}
+
+.benefit p {
+    color: #666; /* Medium gray */
+}
+
+/* CTA Section */
+.cta {
+    background-color: #000; /* Background hitam */
+    color: #fff; /* Text putih */
+    text-align: center; /* Center text */
+}
+
+.cta h2 {
+    font-size: 2rem; /* Ukuran heading */
+    margin-bottom: 1rem; /* Margin bawah */
+}
+
+.cta p {
+    font-size: 1.1rem; /* Sedikit lebih besar */
+    margin-bottom: 2rem; /* Margin bawah */
+    opacity: 0.9; /* Sedikit transparan */
+}
+
+.cta-button-secondary {
+    display: inline-block; /* Inline block */
+    background-color: #fff; /* Background putih */
+    color: #000; /* Text hitam */
+    padding: 15px 30px; /* Padding */
+    text-decoration: none; /* No underline */
+    font-weight: 600; /* Semi bold */
+    border-radius: 5px; /* Rounded corners */
+    transition: transform 0.3s ease; /* Animasi */
+}
+
+.cta-button-secondary:hover {
+    transform: scale(1.05); /* Membesar sedikit */
+}
+
+/* Contact Section */
+.contact-info {
+    display: grid; /* Grid layout */
+    grid-template-columns: 1fr 1fr; /* 2 columns */
+    gap: 4rem; /* Gap antar columns */
+    margin-top: 3rem; /* Margin atas */
+}
+
+.contact-item h3 {
+    font-size: 1.5rem; /* Ukuran heading */
+    margin-bottom: 1rem; /* Margin bawah */
+}
+
+.contact-item p {
+    margin-bottom: 0.5rem; /* Margin antar paragraf */
+    color: #333; /* Dark gray */
+}
+
+/* Contact Form */
+.contact-form h3 {
+    font-size: 1.5rem; /* Ukuran heading */
+    margin-bottom: 1.5rem; /* Margin bawah */
+}
+
+#contactForm {
+    display: flex; /* Flex layout */
+    flex-direction: column; /* Vertical */
+    gap: 1rem; /* Gap antar inputs */
+}
+
+#contactForm input,
+#contactForm textarea {
+    padding: 12px; /* Padding internal */
+    border: 2px solid #e0e0e0; /* Border gray */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 1rem; /* Ukuran font */
+    font-family: inherit; /* Inherit font */
+    transition: border-color 0.3s ease; /* Animasi focus */
+}
+
+#contactForm input:focus,
+#contactForm textarea:focus {
+    outline: none; /* Hilangkan outline default */
+    border-color: #000; /* Border hitam saat focus */
+}
+
+.submit-button {
+    background-color: #000; /* Background hitam */
+    color: #fff; /* Text putih */
+    padding: 12px 30px; /* Padding */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 1rem; /* Ukuran font */
+    font-weight: 600; /* Semi bold */
+    cursor: pointer; /* Pointer cursor */
+    transition: transform 0.3s ease; /* Animasi */
+}
+
+.submit-button:hover {
+    transform: translateY(-2px); /* Naik sedikit */
+}
+
+/* Footer */
+.footer {
+    background-color: #000; /* Background hitam */
+    color: #fff; /* Text putih */
+    text-align: center; /* Center text */
+    padding: 2rem 0; /* Padding vertical */
+}
+
+.footer p {
+    opacity: 0.8; /* Sedikit transparan */
+}
+
+/* Product Page Specific Styles */
+.products-grid {
+    display: grid; /* Grid layout */
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Responsive columns */
+    gap: 3rem; /* Gap antar products */
+    margin-top: 3rem; /* Margin atas */
+}
+
+.product-card {
+    background-color: #f8f8f8; /* Light background */
+    border-radius: 10px; /* Rounded corners */
+    overflow: hidden; /* Hide overflow */
+    transition: transform 0.3s ease; /* Animasi hover */
+}
+
+.product-card:hover {
+    transform: translateY(-5px); /* Naik saat hover */
+}
+
+.product-image {
+    background-color: #e0e0e0; /* Placeholder color */
+    height: 250px; /* Fixed height */
+    display: flex; /* Flex untuk center */
+    align-items: center; /* Vertical center */
+    justify-content: center; /* Horizontal center */
+    font-size: 1.2rem; /* Ukuran text */
+    color: #666; /* Medium gray */
+}
+
+.product-info {
+    padding: 2rem; /* Padding internal */
+}
+
+.product-info h3 {
+    font-size: 1.8rem; /* Ukuran heading */
+    margin-bottom: 1rem; /* Margin bawah */
+}
+
+.specs {
+    margin-top: 1.5rem; /* Margin atas */
+}
+
+.specs h4 {
+    font-size: 1.2rem; /* Ukuran subheading */
+    margin-bottom: 1rem; /* Margin bawah */
+}
+
+.specs ul {
+    list-style: none; /* No bullets */
+    padding-left: 0; /* No padding */
+}
+
+.specs li {
+    padding: 0.5rem 0; /* Padding vertical */
+    border-bottom: 1px solid #e0e0e0; /* Border bawah */
+}
+
+.specs li:last-child {
+    border-bottom: none; /* No border untuk item terakhir */
+}
+
+/* Case Studies Styles */
+.case-studies-grid {
+    display: grid; /* Grid layout */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive columns */
+    gap: 2rem; /* Gap antar items */
+    margin-top: 3rem; /* Margin atas */
+}
+
+.case-study {
+    background-color: #fff; /* White background */
+    border: 2px solid #f0f0f0; /* Light border */
+    border-radius: 10px; /* Rounded corners */
+    padding: 2rem; /* Padding internal */
+    transition: border-color 0.3s ease; /* Animasi hover */
+}
+
+.case-study:hover {
+    border-color: #000; /* Black border saat hover */
+}
+
+.case-study h3 {
+    font-size: 1.5rem; /* Ukuran heading */
+    margin-bottom: 1rem; /* Margin bawah */
+}
+
+.case-study p {
+    color: #666; /* Medium gray */
+    line-height: 1.8; /* Line height */
+}
+
+/* Resources Styles */
+.resources-grid {
+    display: grid; /* Grid layout */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive columns */
+    gap: 2rem; /* Gap antar items */
+    margin-top: 3rem; /* Margin atas */
+}
+
+.resource-category {
+    background-color: #f8f8f8; /* Light background */
+    padding: 2rem; /* Padding internal */
+    border-radius: 10px; /* Rounded corners */
+}
+
+.resource-category h3 {
+    font-size: 1.5rem; /* Ukuran heading */
+    margin-bottom: 1.5rem; /* Margin bawah */
+}
+
+.resource-links {
+    list-style: none; /* No bullets */
+}
+
+.resource-links li {
+    margin-bottom: 1rem; /* Margin antar items */
+}
+
+.resource-links a {
+    color: #000; /* Black text */
+    text-decoration: none; /* No underline */
+    display: flex; /* Flex layout */
+    align-items: center; /* Vertical center */
+    padding: 0.5rem; /* Padding */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s ease; /* Animasi hover */
+}
+
+.resource-links a:hover {
+    background-color: #e0e0e0; /* Gray background saat hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex; /* Show hamburger di mobile */
+    }
+    
+    .nav-menu {
+        position: fixed; /* Fixed position */
+        left: -100%; /* Hidden di kiri */
+        top: 70px; /* Di bawah navbar */
+        flex-direction: column; /* Vertical menu */
+        background-color: #000; /* Black background */
+        width: 100%; /* Full width */
+        text-align: center; /* Center text */
+        transition: 0.3s; /* Animasi slide */
+        padding: 2rem 0; /* Padding vertical */
+    }
+    
+    .nav-menu.active {
+        left: 0; /* Slide in dari kiri */
+    }
+    
+    .hero-title {
+        font-size: 2rem; /* Smaller di mobile */
+    }
+    
+    .section-title {
+        font-size: 1.8rem; /* Smaller di mobile */
+    }
+    
+    .contact-info {
+        grid-template-columns: 1fr; /* Single column di mobile */
+        gap: 2rem; /* Smaller gap */
+    }
+    
+    .features,
+    .benefits,
+    .products-grid,
+    .case-studies-grid,
+    .resources-grid {
+        grid-template-columns: 1fr; /* Single column di mobile */
+    }
+}

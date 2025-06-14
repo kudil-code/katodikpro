@@ -1,0 +1,18 @@
+[
+    {
+        "name": "Beranda",
+        "url": "index.html"
+    },
+    {
+        "name": "Produk",
+        "url": "products.html"
+    },
+    {
+        "name": "Studi Kasus",
+        "url": "case_studies.html"
+    },
+    {
+        "name": "Sumber Daya",
+        "url": "resources.html"
+    }
+]
