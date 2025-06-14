@@ -1,3 +1,93 @@
+/* Color Variables */
+:root {
+    --black: #000000;
+    --white: #ffffff;
+    --gray-50: #fafafa;
+    --gray-100: #f5f5f5;
+    --gray-200: #e5e5e5;
+    --gray-300: #d4d4d4;
+    --gray-400: #a3a3a3;
+    --gray-500: #737373;
+    --gray-600: #525252;
+    --gray-700: #404040;
+    --gray-800: #262626;
+    --gray-900: #171717;
+}
+
+/* Icon Styles */
+.fas, .far {
+    margin-right: 8px;
+    transition: transform 0.3s ease;
+}
+
+.nav-menu .fas {
+    font-size: 1rem;
+}
+
+.feature i, .benefit i {
+    display: block;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--gray-700);
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.feature:hover i, .benefit:hover i {
+    color: var(--black);
+    transform: scale(1.1);
+}
+
+.case-study i {
+    color: var(--gray-600);
+    font-size: 1.2rem;
+}
+
+.resource-category > h3 > i {
+    font-size: 1.5rem;
+    color: var(--gray-700);
+}
+
+.resource-links i {
+    color: var(--gray-600);
+    width: 20px;
+    text-align: center;
+}
+
+.contact-item i {
+    color: var(--gray-600);
+    width: 20px;
+    text-align: center;
+}
+
+.text-icon {
+    font-size: 0.9rem;
+    width: 20px;
+    display: inline-block;
+    text-align: center;
+    color: var(--gray-600);
+}
+
+.logo i {
+    margin-right: 10px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.7; }
+    100% { opacity: 1; }
+}
+
+.cta-button i, .cta-button-secondary i, .submit-button i {
+    margin-left: 8px;
+    transition: transform 0.3s ease;
+}
+
+.cta-button:hover i, .cta-button-secondary:hover i, .submit-button:hover i {
+    transform: translateX(5px);
+}
+
+
 /* Reset and Base Styles */
 * {
     margin: 0; /* Menghilangkan margin default */
@@ -20,14 +110,14 @@ body {
 
 /* Navigation Bar */
 .navbar {
-    background-color: #000; /* Background hitam untuk navbar */
+    background-color: var(--gray-900); /* Background hitam untuk navbar */
     color: #fff; /* Text putih */
     padding: 1rem 0; /* Padding vertical */
     position: fixed; /* Navbar tetap di atas saat scroll */
     width: 100%; /* Lebar penuh */
     top: 0; /* Posisi di atas */
     z-index: 1000; /* Di atas element lain */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Shadow subtle */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.08); /* Shadow subtle */
 }
 
 .navbar .container {
@@ -56,6 +146,7 @@ body {
 }
 
 .nav-menu a:hover {
+    color: var(--gray-300);
     opacity: 0.7; /* Transparansi saat hover */
 }
 
@@ -75,7 +166,7 @@ body {
 
 /* Hero Section */
 .hero {
-    background-color: #f5f5f5; /* Light gray background */
+    background-color: var(--gray-100); /* Light gray background */
     padding: 120px 0 80px; /* Padding dengan ruang untuk navbar */
     text-align: center; /* Center text */
 }
@@ -89,7 +180,7 @@ body {
 
 .hero-subtitle {
     font-size: 1.25rem; /* Subtitle lebih besar */
-    color: #333; /* Dark gray */
+    color: var(--gray-800); /* Dark gray */
     margin-bottom: 2rem; /* Margin bawah */
     max-width: 600px; /* Lebar maksimal */
     margin-left: auto; /* Center horizontal */
@@ -98,7 +189,7 @@ body {
 
 .cta-button {
     display: inline-block; /* Inline block untuk padding */
-    background-color: #000; /* Background hitam */
+    background-color: var(--gray-900); /* Background hitam */
     color: #fff; /* Text putih */
     padding: 15px 30px; /* Padding button */
     text-decoration: none; /* Hilangkan underline */
@@ -108,6 +199,7 @@ body {
 }
 
 .cta-button:hover {
+    background-color: var(--gray-800);
     transform: translateY(-2px); /* Naik sedikit */
     box-shadow: 0 5px 15px rgba(0,0,0,0.2); /* Shadow */
 }
@@ -129,7 +221,7 @@ section {
     max-width: 800px; /* Lebar maksimal */
     margin: 0 auto 3rem; /* Center dengan margin bawah */
     font-size: 1.1rem; /* Sedikit lebih besar */
-    color: #333; /* Dark gray */
+    color: var(--gray-800); /* Dark gray */
 }
 
 /* Features Grid */
@@ -143,7 +235,7 @@ section {
 .feature {
     text-align: center; /* Center text */
     padding: 2rem; /* Padding internal */
-    background-color: #f8f8f8; /* Light background */
+    background-color: var(--gray-50); /* Light background */
     border-radius: 10px; /* Rounded corners */
     transition: transform 0.3s ease; /* Animasi hover */
 }
@@ -158,13 +250,13 @@ section {
 }
 
 .feature p {
-    color: #666; /* Medium gray */
+    color: var(--gray-600); /* Medium gray */
     line-height: 1.8; /* Line height longgar */
 }
 
 /* Why Us Section */
 .why-us {
-    background-color: #f5f5f5; /* Light gray background */
+    background-color: var(--gray-100); /* Light gray background */
 }
 
 .benefits {
@@ -177,12 +269,12 @@ section {
     background-color: #fff; /* White background */
     padding: 2rem; /* Padding internal */
     border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05); /* Subtle shadow */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.04); /* Subtle shadow */
     transition: box-shadow 0.3s ease; /* Animasi hover */
 }
 
 .benefit:hover {
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1); /* Shadow lebih dalam */
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08); /* Shadow lebih dalam */
 }
 
 .benefit h3 {
@@ -191,12 +283,12 @@ section {
 }
 
 .benefit p {
-    color: #666; /* Medium gray */
+    color: var(--gray-600); /* Medium gray */
 }
 
 /* CTA Section */
 .cta {
-    background-color: #000; /* Background hitam */
+    background-color: var(--gray-900); /* Background hitam */
     color: #fff; /* Text putih */
     text-align: center; /* Center text */
 }
@@ -242,7 +334,7 @@ section {
 
 .contact-item p {
     margin-bottom: 0.5rem; /* Margin antar paragraf */
-    color: #333; /* Dark gray */
+    color: var(--gray-800); /* Dark gray */
 }
 
 /* Contact Form */
@@ -260,7 +352,7 @@ section {
 #contactForm input,
 #contactForm textarea {
     padding: 12px; /* Padding internal */
-    border: 2px solid #e0e0e0; /* Border gray */
+    border: 2px solid var(--gray-300); /* Border gray */
     border-radius: 5px; /* Rounded corners */
     font-size: 1rem; /* Ukuran font */
     font-family: inherit; /* Inherit font */
@@ -270,11 +362,11 @@ section {
 #contactForm input:focus,
 #contactForm textarea:focus {
     outline: none; /* Hilangkan outline default */
-    border-color: #000; /* Border hitam saat focus */
+    border-color: var(--gray-700); /* Border hitam saat focus */
 }
 
 .submit-button {
-    background-color: #000; /* Background hitam */
+    background-color: var(--gray-900); /* Background hitam */
     color: #fff; /* Text putih */
     padding: 12px 30px; /* Padding */
     border: none; /* No border */
@@ -291,7 +383,7 @@ section {
 
 /* Footer */
 .footer {
-    background-color: #000; /* Background hitam */
+    background-color: var(--gray-900); /* Background hitam */
     color: #fff; /* Text putih */
     text-align: center; /* Center text */
     padding: 2rem 0; /* Padding vertical */
@@ -310,7 +402,7 @@ section {
 }
 
 .product-card {
-    background-color: #f8f8f8; /* Light background */
+    background-color: var(--gray-50); /* Light background */
     border-radius: 10px; /* Rounded corners */
     overflow: hidden; /* Hide overflow */
     transition: transform 0.3s ease; /* Animasi hover */
@@ -321,13 +413,13 @@ section {
 }
 
 .product-image {
-    background-color: #e0e0e0; /* Placeholder color */
+    background-color: var(--gray-200); /* Placeholder color */
     height: 250px; /* Fixed height */
     display: flex; /* Flex untuk center */
     align-items: center; /* Vertical center */
     justify-content: center; /* Horizontal center */
     font-size: 1.2rem; /* Ukuran text */
-    color: #666; /* Medium gray */
+    color: var(--gray-600); /* Medium gray */
 }
 
 .product-info {
@@ -355,7 +447,7 @@ section {
 
 .specs li {
     padding: 0.5rem 0; /* Padding vertical */
-    border-bottom: 1px solid #e0e0e0; /* Border bawah */
+    border-bottom: 1px solid var(--gray-200); /* Border bawah */
 }
 
 .specs li:last-child {
@@ -372,14 +464,16 @@ section {
 
 .case-study {
     background-color: #fff; /* White background */
-    border: 2px solid #f0f0f0; /* Light border */
+    border: 2px solid var(--gray-200); /* Light border */
     border-radius: 10px; /* Rounded corners */
     padding: 2rem; /* Padding internal */
     transition: border-color 0.3s ease; /* Animasi hover */
 }
 
 .case-study:hover {
-    border-color: #000; /* Black border saat hover */
+    border-color: var(--gray-600);
+    background-color: var(--gray-50);
+    border-color: var(--gray-700); /* Black border saat hover */
 }
 
 .case-study h3 {
@@ -388,7 +482,7 @@ section {
 }
 
 .case-study p {
-    color: #666; /* Medium gray */
+    color: var(--gray-600); /* Medium gray */
     line-height: 1.8; /* Line height */
 }
 
@@ -401,7 +495,7 @@ section {
 }
 
 .resource-category {
-    background-color: #f8f8f8; /* Light background */
+    background-color: var(--gray-50); /* Light background */
     padding: 2rem; /* Padding internal */
     border-radius: 10px; /* Rounded corners */
 }
@@ -430,7 +524,9 @@ section {
 }
 
 .resource-links a:hover {
-    background-color: #e0e0e0; /* Gray background saat hover */
+    background-color: var(--gray-100);
+    transform: translateX(5px);
+    background-color: var(--gray-200); /* Gray background saat hover */
 }
 
 /* Responsive Design */
@@ -444,7 +540,7 @@ section {
         left: -100%; /* Hidden di kiri */
         top: 70px; /* Di bawah navbar */
         flex-direction: column; /* Vertical menu */
-        background-color: #000; /* Black background */
+        background-color: var(--gray-900); /* Black background */
         width: 100%; /* Full width */
         text-align: center; /* Center text */
         transition: 0.3s; /* Animasi slide */
@@ -474,5 +570,144 @@ section {
     .case-studies-grid,
     .resources-grid {
         grid-template-columns: 1fr; /* Single column di mobile */
+    }
+}
+
+/* Enhanced hover states */
+.feature {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--gray-200);
+}
+
+.feature::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.feature:hover::before {
+    left: 100%;
+}
+
+.benefit {
+    border: 1px solid var(--gray-200);
+    position: relative;
+    overflow: hidden;
+}
+
+.benefit::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: var(--gray-700);
+    transition: width 0.3s ease;
+}
+
+.benefit:hover::after {
+    width: 100%;
+}
+
+/* Product card enhancements */
+.product-card {
+    border: 1px solid var(--gray-200);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.product-card:hover {
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+
+.product-image {
+    background: linear-gradient(135deg, var(--gray-200), var(--gray-300));
+    position: relative;
+    overflow: hidden;
+}
+
+.product-image::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Success metrics enhancement */
+.success-metrics {
+    background-color: var(--gray-50);
+    padding: 3rem 0;
+    margin-top: 4rem;
+    border-top: 1px solid var(--gray-200);
+}
+
+/* Resource category cards */
+.resource-category {
+    border: 1px solid var(--gray-200);
+    transition: all 0.3s ease;
+}
+
+.resource-category:hover {
+    background-color: var(--white);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+}
+
+/* Contact form improvements */
+#contactForm input,
+#contactForm textarea {
+    background-color: var(--gray-50);
+    border: 2px solid var(--gray-200);
+}
+
+#contactForm input:focus,
+#contactForm textarea:focus {
+    background-color: var(--white);
+    border-color: var(--gray-600);
+}
+
+/* CTA section gradient */
+.cta {
+    background: linear-gradient(135deg, var(--gray-900) 0%, var(--black) 100%);
+}
+
+/* Navbar enhancement */
+.navbar {
+    background: linear-gradient(to right, var(--gray-900), var(--black));
+    backdrop-filter: blur(10px);
+}
+
+/* Footer enhancement */
+.footer {
+    background: linear-gradient(to right, var(--black), var(--gray-900));
+}
+
+/* Mobile menu enhancement */
+@media (max-width: 768px) {
+    .nav-menu {
+        background: linear-gradient(to bottom, var(--gray-900), var(--black));
+    }
+    
+    .nav-menu a {
+        padding: 1rem;
+        border-bottom: 1px solid var(--gray-800);
+    }
+    
+    .nav-menu a:hover {
+        background-color: var(--gray-800);
     }
 }

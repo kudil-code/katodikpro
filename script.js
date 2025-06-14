@@ -32,7 +32,17 @@ async function loadMenu() {
                 // Buat element a (link)
                 const a = document.createElement('a');
                 a.href = item.url; // Set URL dari JSON
-                a.textContent = item.name; // Set text dari JSON
+                
+                // Add icon if available
+                if (item.icon) {
+                    const icon = document.createElement('i');
+                    icon.className = item.icon;
+                    a.appendChild(icon);
+                }
+                
+                // Add text
+                const textNode = document.createTextNode(item.name);
+                a.appendChild(textNode);
                 
                 // Tambahkan class active jika URL matches current page
                 if (window.location.pathname.includes(item.url)) {
@@ -56,10 +66,10 @@ async function loadMenu() {
 function createFallbackMenu() {
     // Default menu items
     const defaultMenu = [
-        { name: 'Beranda', url: 'index.html' },
-        { name: 'Produk', url: 'products.html' },
-        { name: 'Studi Kasus', url: 'case_studies.html' },
-        { name: 'Sumber Daya', url: 'resources.html' }
+        { name: 'Beranda', url: 'index.html', icon: 'fas fa-home' },
+        { name: 'Produk', url: 'products.html', icon: 'fas fa-box-open' },
+        { name: 'Studi Kasus', url: 'case_studies.html', icon: 'fas fa-project-diagram' },
+        { name: 'Sumber Daya', url: 'resources.html', icon: 'fas fa-download' }
     ];
     
     // Ambil semua nav-menu elements
@@ -204,3 +214,40 @@ function setupScrollAnimations() {
 
 // Call scroll animations setup
 setupScrollAnimations();
+
+// Function untuk animate icons on hover
+function setupIconAnimations() {
+    // Animate feature/benefit icons on hover
+    const cards = document.querySelectorAll('.feature, .benefit, .case-study');
+    
+    cards.forEach(card => {
+        const icon = card.querySelector('i');
+        if (icon) {
+            card.addEventListener('mouseenter', () => {
+                icon.style.transform = 'scale(1.2) rotate(5deg)';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                icon.style.transform = 'scale(1) rotate(0deg)';
+            });
+        }
+    });
+    
+    // Animate navigation icons
+    const navLinks = document.querySelectorAll('.nav-menu a');
+    navLinks.forEach(link => {
+        const icon = link.querySelector('i');
+        if (icon) {
+            link.addEventListener('mouseenter', () => {
+                icon.style.transform = 'translateY(-2px)';
+            });
+            
+            link.addEventListener('mouseleave', () => {
+                icon.style.transform = 'translateY(0)';
+            });
+        }
+    });
+}
+
+// Call icon animations after menu loads
+setTimeout(setupIconAnimations, 500);
